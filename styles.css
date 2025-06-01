@@ -7,6 +7,7 @@
 
 body {
     background-color: #121212;
+    padding: 50px 0;
     color: #fff;
     min-height: 100vh;
     display: flex;
