@@ -9,10 +9,12 @@ Built using vanilla HTML, CSS, and JavaScript. Deployable on any static server o
 
 ## 🚀 Features
 
-- Synchronized playback across devices and browsers, just like if it was live
+- Synchronized playback across devices and browsers
 - Lightweight and fully static (no backend deployment needed!)
-- Smooth track transitions with blurred background fade
-- Controls for volume + animated progress indicators
+- Supports songs & playlist on a remote location
+- Pre-loads the next track, to eliminate buffering in between songs
+- Smooth track transitions and with fading animations
+- GUI controls for volume / mute + animated progress indicators
 - JSON-based playlist (includes metadata generation tool, see below)
 
 ## 📸 Screenshots
@@ -28,9 +30,9 @@ Built using vanilla HTML, CSS, and JavaScript. Deployable on any static server o
   </tr>
 </table>
 
-## 🧪 Run Locally
+## 🧪 Run Your own radio channel
 
-Run or deploy with any web server, or simply open the index.html file with your browser of choice. 
+Run or deploy a fork of this website with any web server, or simply open the index.html file with your browser of choice!
 
 ---
 
