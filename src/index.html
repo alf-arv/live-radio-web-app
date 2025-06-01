@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banger Tunes Radio 1.0</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/radio-favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <script src="script.js"></script>
+
+    <!-- double background elements to allow fading between them -->
+    <div class="background-blur-container">
+        <div class="background-blur blur--1 visible"></div>
+        <div class="background-blur blur-1"></div>
+    </div>
+    
+    <div class="unmute-overlay" id="unmute-overlay">
+        <p class="unmute-text">Welcome! Click anywhere to unmute playback and start listening.</p>
+    </div>
+    
+    <div class="container">
+        <div class="player-content">
+            <div class="cover-art">
+                <img id="cover-image" alt="Album Cover">
+            </div>
+            
+            <div class="track-info">
+                <h2 class="track-title" id="track-title">Song title</h2>
+                <p class="track-artist" id="track-artist">Awesome artist</p>
+                <p class="track-desc" id="track-desc">Chill beats with tropical influences.</p>
+                <a href="#" class="source-link" id="source-link" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> Original Source
+                </a>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <div class="volume-container">
+                <button class="mute-btn" id="mute">
+                    <i class="fas fa-volume-mute"></i>
+                </button>
+                <input type="range" min="0" max="1" step="0.01" value="0.8" class="volume-slider" id="volume">
+            </div>
+            
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress" id="progress"></div>
+                </div>
+                <div class="time-info">
+                    <span id="current-time">0:00</span>
+                    <span id="total-time">0:00</span>
+                </div>
+            </div>
+            
+            <div class="playback-status">
+                <div class="status-dot"></div>
+                <span id="status-text">Playback muted - Click to unmute</span>
+            </div>
+        </div>
+    </div>
+    
+    <audio id="audio-player" class="audio-player" autoplay muted>
+        Your browser does not support the audio element.
+    </audio>
+
+</body>
+</html>

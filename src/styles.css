@@ -1,0 +1,355 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #121212;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.background-blur-container {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+overflow: hidden;
+z-index: -1;
+}
+
+.background-blur {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-size: cover;
+background-position: center;
+filter: blur(20px) brightness(0.7);
+transform: scale(1.05);
+opacity: 0;
+transition: opacity 1s ease;
+}
+
+.background-blur.visible {
+opacity: 1;
+}
+
+.container {
+    width: 90%;
+    max-width: 900px;
+    background: rgba(30, 30, 30, 0.6);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    position: relative;
+}
+
+.player-content {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.cover-art {
+    flex: 0 0 300px;
+    height: 300px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    transition: transform 0.5s;
+    position: relative;
+}
+
+.cover-art img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.cover-art:hover img {
+    transform: scale(1.05);
+}
+
+.track-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.track-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+    color: #fff;
+}
+
+.track-artist {
+    font-size: 1.4rem;
+    color: #1db954;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.track-desc {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 30px;
+    max-height: 120px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.track-desc::-webkit-scrollbar {
+    width: 6px;
+}
+
+.track-desc::-webkit-scrollbar-thumb {
+    background-color: #1db954;
+    border-radius: 3px;
+}
+
+.source-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(29, 185, 84, 0.15);
+    color: #1db954;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s;
+    border: 1px solid rgba(29, 185, 84, 0.3);
+    width: fit-content;
+}
+
+.source-link:hover {
+    background: rgba(29, 185, 84, 0.25);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(29, 185, 84, 0.2);
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.volume-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.mute-btn {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.mute-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.volume-slider {
+    flex: 1;
+    -webkit-appearance: none;
+    height: 6px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.1);
+    outline: none;
+}
+
+.volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #1db954;
+    cursor: pointer;
+    box-shadow: 0 0 8px rgba(29, 185, 84, 0.5);
+}
+
+.playback-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+    background: #1db954;
+    border-radius: 50%;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.5; transform: scale(0.9); }
+    50% { opacity: 1; transform: scale(1.1); }
+    100% { opacity: 0.5; transform: scale(0.9); }
+}
+
+.progress-container {
+    width: 100%;
+    max-width: 500px;
+    margin-top: 15px;
+}
+
+.progress-bar {
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background: #1db954;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+.time-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.audio-player {
+    display: none;
+}
+
+.unmute-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    backdrop-filter: blur(5px);
+    transition: opacity 0.5s ease;
+}
+
+.unmute-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.unmute-text {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    max-width: 80%;
+    text-shadow:
+    0 0 6px rgba(0, 0, 0, 0.6),
+    0 0 12px rgba(0, 0, 0, 0.4),
+    0 0 18px rgba(0, 0, 0, 0.2);
+}
+
+.unmute-icon {
+    font-size: 1.8rem;
+}
+
+@media (max-width: 768px) {
+    .player-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cover-art {
+        flex: 0 0 250px;
+        width: 250px;
+        height: 250px;
+    }
+    
+    .track-info {
+        align-items: center;
+        text-align: center;
+    }
+    
+    .track-title {
+        font-size: 2rem;
+    }
+    
+    .track-artist {
+        font-size: 1.2rem;
+    }
+    
+    .track-desc {
+        text-align: center;
+        font-size: 1rem;
+        max-height: 100px;
+    }
+
+    .unmute-overlay {
+        padding: 20px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+    }
+    
+    .cover-art {
+        width: 220px;
+        height: 220px;
+    }
+    
+    .track-title {
+        font-size: 1.8rem;
+    }
+    
+    .volume-container {
+        gap: 10px;
+    }
+
+    .unmute-button {
+        padding: 12px 30px;
+        font-size: 1.1rem;
+    }
+}
