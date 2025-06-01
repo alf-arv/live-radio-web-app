@@ -17,8 +17,8 @@ Built using vanilla HTML, CSS, and JavaScript. Deployable on any static server o
 ## 📸 Screenshots
 
 <p float="left">
-  <img src="src/assets/readme-assets/portrait.png" width="175" /> 
-  <img src="src/assets/readme-assets/widescreen.png" width="503" />
+  <img src="assets/readme-assets/portrait.png" width="175" /> 
+  <img src="assets/readme-assets/widescreen.png" width="503" />
 </p>
 
 ## 🧪 Run Locally
