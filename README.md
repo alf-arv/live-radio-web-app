@@ -4,7 +4,8 @@ A minimalist web application that simulates a live radio broadcast, using no act
 
 Built using vanilla HTML, CSS, and JavaScript. Deployable on any static server or lightweight container like Apache in Docker.
 
----
+## **[Try the live demo 🎧](https://alf-arv.github.io/live-radio-web-app/)**  
+
 
 ## 🚀 Features
 
@@ -16,10 +17,16 @@ Built using vanilla HTML, CSS, and JavaScript. Deployable on any static server o
 
 ## 📸 Screenshots
 
-<p float="left">
-  <img src="assets/readme-assets/portrait.png" width="175" /> 
-  <img src="assets/readme-assets/widescreen.png" width="503" />
-</p>
+<table>
+  <tr>
+    <th>📱</th>
+    <th>💻</th>
+  </tr>
+  <tr>
+    <td><img src="assets/readme-assets/portrait.png" width="175" /></td>
+    <td><img src="assets/readme-assets/widescreen.png" width="503" /></td>
+  </tr>
+</table>
 
 ## 🧪 Run Locally
 
